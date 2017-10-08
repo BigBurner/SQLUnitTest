@@ -7,11 +7,15 @@ import { RouterModule }   from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
+import { TestDetailComponent } from './test-detail/test-detail.component';
+import { MainSectionComponent } from './main-section/main-section.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SideBarComponent
+    SideBarComponent,
+    TestDetailComponent,
+    MainSectionComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +24,7 @@ import { SideBarComponent } from './side-bar/side-bar.component';
     RouterModule.forRoot([
       {
         path: 'detail/:id',
-        component: SideBarComponent
+        component: MainSectionComponent
       }
     ])
   ],

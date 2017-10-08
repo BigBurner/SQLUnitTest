@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { UnitTestService } from './../unit-test.service';
 
@@ -8,8 +9,9 @@ import { UnitTestService } from './../unit-test.service';
 })
 export class SideBarComponent implements OnInit {
   unitTests: any[];
+  selectedUnitTest: any;
   
-  constructor(private unitTestService: UnitTestService) { }
+  constructor(private router: Router, private unitTestService: UnitTestService) { }
   
   ngOnInit() {
     this.getData()
@@ -21,4 +23,11 @@ export class SideBarComponent implements OnInit {
     .then(data => {console.log(data); this.unitTests = data})
   }
 
+  onSelect (unitTest: any) {
+    this.selectedUnitTest = unitTest;
+    // this.gotoDetail();
+  }
+  gotoDetail(): void {
+    this.router.navigate(['/detail', this.selectedUnitTest]);
+  }
 }

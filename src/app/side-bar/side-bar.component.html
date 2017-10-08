@@ -1,5 +1,7 @@
 <ul class="nav nav-pills flex-column">
-  <li *ngFor="let unitTest of unitTests" class="nav-item">
-    <a class="nav-link active" href="#">{{unitTest.name}}</a>
+  <li *ngFor="let unitTest of unitTests" class="nav-item text-lowercase small" 
+   [title]="unitTest.name"
+   [class.active]="unitTest === selectedUnitTest">
+    <a class="nav-link  " [routerLink]="['/detail', unitTest._links.utTest.href]" (click)="onSelect(unitTest)">{{unitTest.name}}</a>
   </li>
 </ul>
