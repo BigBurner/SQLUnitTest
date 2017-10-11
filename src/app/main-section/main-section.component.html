@@ -1,2 +1,26 @@
-<h3 text-uppercase>{{unitTest?.name}}</h3>
-<app-test-detail [selectedUT]="unitTest"></app-test-detail>
+<app-tabs>
+  <app-tab tabTitle="First">
+    <h3 text-uppercase>{{unitTest?.name}}</h3>
+    <app-test-detail [selectedUT]="unitTest"></app-test-detail>
+  </app-tab>
+  <app-tab tabTitle="Second">
+    <p>This Tab Content 2</p>
+  </app-tab>
+  <app-tab tabTitle="third">
+    <p>This Tab Content 3</p>
+  </app-tab>
+</app-tabs>
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Active</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#">Disabled</a>
+  </li>
+</ul>

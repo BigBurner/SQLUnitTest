@@ -9,13 +9,17 @@ import { AppComponent } from './app.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { TestDetailComponent } from './test-detail/test-detail.component';
 import { MainSectionComponent } from './main-section/main-section.component';
+import { TabsComponent } from './tabs/tabs.component';
+import { TabComponent } from './tabs/tab.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SideBarComponent,
     TestDetailComponent,
-    MainSectionComponent
+    MainSectionComponent,
+    TabsComponent,
+    TabComponent
   ],
   imports: [
     BrowserModule,

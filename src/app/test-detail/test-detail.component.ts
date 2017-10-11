@@ -10,6 +10,7 @@ export class TestDetailComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  	console.log("test detail init")
   }
 
 }
