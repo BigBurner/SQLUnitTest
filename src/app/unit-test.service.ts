@@ -4,6 +4,7 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class UnitTestService {
+  parser = new DOMParser();
   private url = 'http://localhost:8080/utTests'
   private headers = new Headers({'Content-Type': 'application/json'});
   public tempUTs = [{name: "temp", objectCall: "calling temp", objectOwner: "CDB_OWNER",_links:{utTest:{href: "temp"}}}
@@ -36,8 +37,8 @@ export class UnitTestService {
   }
 
   getUnitTest(url: string) : Promise<any>{
-    console.log(url)
-    // return new Promise<any> ((resolve, reject) => {resolve(this.tempUTs.find(o => o.name === url))});
+    // console.log(url)
+    // return new Promise<any> ((resolve, reject) => {resolve(this.tempUTs.find(o => o.name === url))});  
     return this.http.get(url)
     .toPromise()
     .then(response => response.json() as any[] )
@@ -47,5 +48,9 @@ export class UnitTestService {
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for demo purposes only
     return Promise.reject(error.message || error);
+  }
+
+  getXmlFromString(xmlString: string) : Document{
+    return this.parser.parseFromString(xmlString,"text/xml");
   }
 } 

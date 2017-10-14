@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { UnitTestService } from './../unit-test.service';
+import { Component, OnInit, Input, AfterContentInit } from '@angular/core';
 
 @Component({
   selector: 'app-test-detail',
@@ -7,10 +8,15 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TestDetailComponent implements OnInit {
   @Input() selectedUT: any;
-  constructor() { }
+  uTestStartup: any;
+
+  constructor(private unitTestService: UnitTestService) { }
 
   ngOnInit() {
-  	console.log("test detail init")
+    console.log("test detail init")
+    // this.getUTestDetails()
+    
+    
   }
 
 }

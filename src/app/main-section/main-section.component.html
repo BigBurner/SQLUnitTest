@@ -1,7 +1,11 @@
 <app-tabs>
   <app-tab tabTitle="Setup">
-    <h3 text-uppercase>{{unitTest?.name}}</h3>
+    <h3 text-uppercase [title]="unitTest?.name">{{unitTest?.name}}</h3>
     <app-test-detail [selectedUT]="unitTest"></app-test-detail>
+  </app-tab>
+  <app-tab tabTitle="Start Ups">
+    <h3 text-uppercase [title]="unitTest?.name">{{unitTest?.name}}</h3>
+    <app-startups-tab [startupURL]="unitTest?._links.utStartups.href"></app-startups-tab>
   </app-tab>
   <app-tab tabTitle="Implementations">
     <p>This Tab Content 2</p>

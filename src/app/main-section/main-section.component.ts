@@ -24,7 +24,7 @@ export class MainSectionComponent implements OnInit {
       .switchMap((params: ParamMap) => this.unitTestService.getUnitTest(params.get('id')))
       .subscribe((unitTest: any) => {this.unitTest = unitTest
         localStorage.setItem("currUT", JSON.stringify(unitTest))
-        console.log(unitTest.name);
+        // console.log(unitTest.name);
     }); 
   }
 
