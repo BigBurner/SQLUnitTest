@@ -28,22 +28,20 @@ export class UnitTestService {
   constructor(private http: Http) { }
 
   getUnitTests(): Promise<any> {
-    return new Promise<any> ((resolve, reject) => resolve(this.tempUTs))
-    // return this.http.get(this.url)
-    //         .toPromise()
-    //         .then(response => response.json()._embedded.utTests as any[])
-    //         .catch(this.handleError);
+    // return new Promise<any> ((resolve, reject) => resolve(this.tempUTs))
+    return this.http.get(this.url)
+            .toPromise()
+            .then(response => response.json()._embedded.utTests as any[])
+            .catch(this.handleError);
   }
 
   getUnitTest(url: string) : Promise<any>{
     console.log(url)
-    return new Promise<any> ((resolve, reject) => {
-      
-      resolve(this.tempUTs.find(o => o.name === url))});
-    // return this.http.get(url)
-    // .toPromise()
-    // .then(response => response.json() as any[] )
-    // .catch(this.handleError);
+    // return new Promise<any> ((resolve, reject) => {resolve(this.tempUTs.find(o => o.name === url))});
+    return this.http.get(url)
+    .toPromise()
+    .then(response => response.json() as any[] )
+    .catch(this.handleError);
   }
 
   private handleError(error: any): Promise<any> {
