@@ -1,4 +1,4 @@
-import { Http, Headers } from '@angular/http';
+import { Http, Headers, RequestOptions } from '@angular/http';
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/toPromise';
 
@@ -7,6 +7,7 @@ export class UnitTestService {
   parser = new DOMParser();
   private url = 'http://localhost:8080/utTests'
   private headers = new Headers({'Content-Type': 'application/json'});
+  private options = new RequestOptions({ headers: this.headers })
   public tempUTs = [{name: "temp", objectCall: "calling temp", objectOwner: "CDB_OWNER",_links:{utTest:{href: "temp"}}}
   , {name: "temp2", objectCall: "calling temp2", objectOwner: "CDB_OWNERx", _links:{utTest:{href: "temp2"}}}
   , {name: "temp3", objectCall: "calling temp3", objectOwner: "CDB_OWNERy", _links:{utTest:{href: "temp3"}}}
@@ -43,6 +44,12 @@ export class UnitTestService {
     .toPromise()
     .then(response => response.json() as any[] )
     .catch(this.handleError);
+  }
+
+  putData(url: string, data: string): Promise<any>{
+    return this.http.put(url, data, this.options)
+    .toPromise()
+    .catch(this.handleError)
   }
 
   private handleError(error: any): Promise<any> {

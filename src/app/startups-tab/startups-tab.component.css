@@ -1,0 +1,5 @@
+.blackBorder {
+    border-style: solid;
+    border-color: lightgray;
+    border-width: 1px;
+}

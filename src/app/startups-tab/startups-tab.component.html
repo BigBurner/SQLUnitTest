@@ -1,4 +1,17 @@
-<div *ngFor="let utStartup of uTestStartups">
-  <h4>Startup</h4>
-  {{getStringFromXml(utStartup?.startup)}}
+<button type="Save" class="btn btn-primary" (click)="onSaveClick()">update </button>
+<div class="card" *ngFor="let utStartup of uTestStartups; let i = index">
+  <div class="card-body">
+    <h5 class="card-title">Startup {{i+1}}</h5>
+    <select name="sType" id="i" [(ngModel)]="utStartup.startupClass" class="form-control form-control-lg">
+      <option value="oracle.dbtools.unit_test.startup.PlSqlStartup">Pl/SQL</option>
+      <option value="oracle.dbtools.unit_test.startup.SqlStartup">SQL Query</option>
+    </select>
+    <div class="blackBorder">
+      <codemirror [(ngModel)]="utStartup.startup" [config]="config" 
+      (change)="onStartupCodeChange(i)"></codemirror>
+      <!-- <codemirror [value]="getStringFromXml(utStartup?.startup)" [config]="config"></codemirror> -->
+      <!-- {{getStringFromXml(utStartup?.startup)}} -->
+      <!-- <codemirror [value]="content" [config]="config"></codemirror> -->
+    </div>  
+  </div>  
 </div>

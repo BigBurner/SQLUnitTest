@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule }   from '@angular/forms';
 import { HttpModule }    from '@angular/http';
 import { RouterModule }   from '@angular/router';
+import { CodemirrorModule } from 'ng2-codemirror';
 
 import { AppComponent } from './app.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
@@ -25,6 +26,7 @@ import { StartupsTabComponent } from './startups-tab/startups-tab.component';
   ],
   imports: [
     BrowserModule,
+    CodemirrorModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot([
