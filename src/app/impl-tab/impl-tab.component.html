@@ -1,0 +1,27 @@
+<!-- <div class="card" *ngFor="let utImpl of uTestImpls; let i = index">
+  <div class="card-body">
+    <codemirror [(ngModel)]="utImpl.code" [config]="config"></codemirror>
+  </div>  
+</div> -->
+<div id="accordion" role="tablist">
+  <div class="item" *ngFor="let utImpl of uTestImpls; let i = index">
+    <div class="card">
+      <div class="card-header" role="tab" id="heading{{i}}">
+        <h5 class="mb-0">
+          <a data-toggle="collapse" href="#collapse{{i}}">
+            {{utImpl?.name}}
+          </a>
+        </h5>
+      </div>
+
+      <div id="collapse{{i}}" class="collapse show" role="tabpanel" data-parent="#accordion">
+        <div class="card-body">
+            <input type="button" value="Save">
+            <codemirror [(ngModel)]="utImpl.code" [config]="config">
+              
+            </codemirror>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

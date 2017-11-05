@@ -13,6 +13,7 @@ import { MainSectionComponent } from './main-section/main-section.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { TabComponent } from './tabs/tab.component';
 import { StartupsTabComponent } from './startups-tab/startups-tab.component';
+import { ImplTabComponent } from './impl-tab/impl-tab.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { StartupsTabComponent } from './startups-tab/startups-tab.component';
     MainSectionComponent,
     TabsComponent,
     TabComponent,
-    StartupsTabComponent
+    StartupsTabComponent,
+    ImplTabComponent
   ],
   imports: [
     BrowserModule,

@@ -14,7 +14,7 @@ export class StartupsTabComponent implements OnInit {
   config
 
   constructor(private unitTestService: UnitTestService) {
-    this.config = { lineNumbers: true, mode: 'text/x-plsql', lineWrapping: true };
+    this.config = { lineNumbers: true, mode: 'text/x-plsql', lineWrapping: true, autoRefresh: true };
    }
 
   ngOnInit() {
